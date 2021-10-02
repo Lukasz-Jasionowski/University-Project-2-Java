@@ -1,0 +1,54 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Integer x = 3;
+        Animal dog = new Animal("Canis");
+        Animal cat = new Animal("Felis");
+        dog.name = "Szarik";
+        dog.weight = 12.3;
+        dog.age = 4;
+
+        System.out.println(dog.name);
+
+        cat.name = "Kitty";
+        System.out.println("Czy kot żyje? " + cat.alive);
+        System.out.println("Waga kota: " + cat.weight);
+
+        cat.introduceYourself();
+        dog.introduceYourself();
+
+        cat.doYouLike("mouse");
+        dog.doYouLike("slippers");
+
+        Integer humanAge = dog.getHumanAge();
+        System.out.println("If I'll be human I'll be " + humanAge + " years old");
+
+        Human me = new Human();
+        me.firstName = "Łukasz";
+        me.lastName = "Jasionowski";
+        me.pet = dog;
+        System.out.println("I have a " + me.pet.species);
+        System.out.println("I called it " + me.pet.name);
+
+        Car myCar = new Car();
+        me.myCar = myCar;
+        myCar.producer = "Audi";
+        myCar.model = "A4";
+        myCar.howManyDoors = 4;
+        myCar.yearOfProduce = 2020;
+
+        System.out.println("I have a car, which is " + me.myCar.producer + " " + me.myCar.model + " the car has " + me.myCar.howManyDoors + " doors and has been created in " + me.myCar.yearOfProduce);
+
+        cat.feed();
+        cat.takeForAWalk();
+        cat.takeForAWalk();
+        cat.takeForAWalk();
+        cat.takeForAWalk();
+        cat.takeForAWalk();
+        cat.feed();
+        cat.feed();
+        cat.takeForAWalk();
+    }
+}
