@@ -57,7 +57,7 @@ public class Main {
 // Zadanie 3 i 4
         me.setSalary(6000.50);
         me.getSalary();
-// Zadanie 5 //Błąd bo pokazuje, else
+// Zadanie 5
         me.setSalary(60000.50);
         me.setMyCar(myCar);
 

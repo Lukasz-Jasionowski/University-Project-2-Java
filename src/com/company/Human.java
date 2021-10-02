@@ -15,7 +15,7 @@ public class Human {
     }
 
     void setSalary(Double salary) {
-        if (salary < 0) {
+        if (salary > 0) {
             System.out.println("Nowe dane zostały wysłąne do systemu księgowego ");
             System.out.println("Proszę odebrać aneks do umowy od pani Hani");
             System.out.println("ZUS i US już wiedzą o zmanie wypłaty i nie masensu uciekać");
