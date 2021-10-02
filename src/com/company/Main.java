@@ -29,6 +29,7 @@ public class Main {
         me.firstName = "Łukasz";
         me.lastName = "Jasionowski";
         me.pet = dog;
+
         System.out.println("I have a " + me.pet.species);
         System.out.println("I called it " + me.pet.name);
 
@@ -50,5 +51,11 @@ public class Main {
         cat.feed();
         cat.feed();
         cat.takeForAWalk();
+
+// Zadanie 3 i 4
+        me.setSalary(6000.50);
+        me.getSalary();
+// Zadanie 5
+
     }
 }
