@@ -5,4 +5,5 @@ public class Car {
     String model;
     Integer howManyDoors;
     Integer yearOfProduce;
+    Double value;
 }

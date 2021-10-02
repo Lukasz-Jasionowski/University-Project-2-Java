@@ -29,18 +29,20 @@ public class Main {
         me.firstName = "Łukasz";
         me.lastName = "Jasionowski";
         me.pet = dog;
+        me.getMyCar();
+        me.getMyCar();
 
         System.out.println("I have a " + me.pet.species);
         System.out.println("I called it " + me.pet.name);
 
         Car myCar = new Car();
-        me.myCar = myCar;
         myCar.producer = "Audi";
         myCar.model = "A4";
         myCar.howManyDoors = 4;
         myCar.yearOfProduce = 2020;
+        myCar.value = 60000.00;
 
-        System.out.println("I have a car, which is " + me.myCar.producer + " " + me.myCar.model + " the car has " + me.myCar.howManyDoors + " doors and has been created in " + me.myCar.yearOfProduce);
+        System.out.println("I have a car, which is " + myCar.producer + " " + myCar.model + " the car has " + myCar.howManyDoors + " doors and has been created in " + myCar.yearOfProduce);
 
         cat.feed();
         cat.takeForAWalk();
@@ -55,7 +57,9 @@ public class Main {
 // Zadanie 3 i 4
         me.setSalary(6000.50);
         me.getSalary();
-// Zadanie 5
+// Zadanie 5 //Błąd bo pokazuje, else
+        me.setSalary(60000.50);
+        me.setMyCar(myCar);
 
     }
 }
