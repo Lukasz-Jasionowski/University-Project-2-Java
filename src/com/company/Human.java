@@ -6,25 +6,27 @@ public class Human {
     String firstName;
     String lastName;
     Integer age;
-    private Double salary;
-    Animal pet;
-    private Car myCar;
+    private Double salary; //Zadanie 3 & 4
+    Animal pet; //Zadanie 1
+    private Car myCar; //Zadanie 5
 
+    //Zadanie 3 & 4
     Human() {
         this.salary = 1200.0;
     }
 
     void setSalary(Double salary) {
         if (salary > 0) {
-            System.out.println("Nowe dane zostały wysłąne do systemu księgowego ");
-            System.out.println("Proszę odebrać aneks do umowy od pani Hani");
-            System.out.println("ZUS i US już wiedzą o zmanie wypłaty i nie masensu uciekać");
+            System.out.println("Nowe dane zostały wysłane do systemu księgowego ");
+            System.out.println("Proszę odebrać aneks do umowy od pani Hani z kadr");
+            System.out.println("ZUS i US już wiedzą o zmanie wypłaty i nie ma sensu ukrywać dochodu");
             this.salary = salary;
         } else if (salary < 0) {
-            System.out.println("Error! Ujemna wartość!");
+            System.out.println("Błąd! Wynagordzenie nie może być ujemne!");
         }
     }
 
+    //Zadanie 3 & 4
     Double getSalary() {
         LocalDate localdate = LocalDate.now();
         System.out.println(localdate);
@@ -32,6 +34,7 @@ public class Human {
         return this.salary;
     }
 
+    //Zadanie 5
     void setMyCar(Car myCar) {
         if (salary > myCar.value) {
             System.out.println("Udało się kupić samochód za gotówkę");
@@ -44,6 +47,7 @@ public class Human {
         }
     }
 
+    //Zadanie 5
     Car getMyCar() {
         return myCar;
     }

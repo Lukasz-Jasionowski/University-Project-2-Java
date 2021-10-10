@@ -1,12 +1,13 @@
 package com.company;
 
 public class Animal {
-    String species;
+    final String species; //Zadanie 1
     String name;
-    Double weight;
+    private Double weight; //Zadanie 1
     Integer age;
     Boolean alive;
 
+    //Zadanie 1
     Animal(String species) {
         this.species = species;
         this.alive = true;
@@ -20,15 +21,43 @@ public class Animal {
         }
     }
 
+    //Zadanie 1
+    void feed() {
+        if (!alive && weight <= 0) {
+            System.out.println("Zwierzę jest martwe. Nie może zostać nakarmione");
+        } else {
+            this.weight += 1;
+            System.out.println("Zwierzę zostało wyprowadzone na spacer");
+            System.out.println("Aktualna waga zwierzęcia " + this.weight + " kg");
+        }
+    }
+
+    //Zadanie 1
+    void takeForAWalk() {
+        if (this.weight <= 0) {
+            alive = false;
+            System.out.println("Zwierzę jest martwe nie może zostać wyprowadzone na spacer");
+        } else if (this.weight < 0) {
+            this.weight = 0.0;
+            System.out.println("Waga zwierzęcia została zredukowana do " + this.weight + " kg");
+        } else {
+            this.weight -= 1;
+            if (this.weight < 0.0) {
+                this.weight = 0.0;
+            }
+            System.out.println("Waga zwierzęcia została zredukowana do " + this.weight + " kg");
+        }
+    }
+
     void introduceYourself() {
-        System.out.println("I'm " + this.name);
+        System.out.println("Jestem " + this.name);
     }
 
     void doYouLike(String foodType) {
         if (this.species == "Felis" && foodType == "mouse") {
-            System.out.println("yes, I like " + foodType);
+            System.out.println("Tak, lubię " + foodType);
         } else {
-            System.out.println("no you idiot");
+            System.out.println("Nie, nie lubię");
         }
     }
 
@@ -42,29 +71,5 @@ public class Animal {
         }
     }
 
-    void feed() {
-        if (!alive && weight <= 0) {
-            System.out.println("Animal is dead. You can't feed it");
-        } else {
-            this.weight += 1;
-            System.out.println("Animal was taken for a walk");
-            System.out.println("It's weight now equals " + this.weight);
-        }
-    }
 
-    void takeForAWalk() {
-        if (this.weight <= 0) {
-            alive = false;
-            System.out.println("Animal is dead you can't take it for a walk");
-        } else if (this.weight < 0) {
-            this.weight = 0.0;
-            System.out.println("Animal's weight was reduced to " + this.weight);
-        } else {
-            this.weight -= 1;
-            if (this.weight < 0.0) {
-                this.weight = 0.0;
-            }
-            System.out.println("Animal's weight was reduced to " + this.weight);
-        }
-    }
 }
