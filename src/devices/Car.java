@@ -1,16 +1,14 @@
-package com.company;
-
-import java.lang.reflect.Constructor;
+package devices;
 
 //Zadanie 2
 public class Car {
-    String producer;
-    String model;
-    Integer howManyDoors;
-    Integer yearOfProduce;
-    Double value; //Zadanie 5
+    public String producer;
+    public String model;
+    public Integer howManyDoors;
+    public Integer yearOfProduce;
+    public Double value; //Zadanie 5
 
-    Car(String producer, String model, Integer howManyDoors,Integer yearOfProduce, Double value){
+    public Car(String producer, String model, Integer howManyDoors, Integer yearOfProduce, Double value){
         this.producer = producer;
         this.model = model;
         this.howManyDoors = howManyDoors;
