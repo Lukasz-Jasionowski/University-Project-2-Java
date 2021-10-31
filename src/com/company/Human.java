@@ -51,4 +51,12 @@ public class Human {
     Car getMyCar() {
         return myCar;
     }
+
+    //Zadanie 6
+    public String toString(){
+        return firstName + " " + lastName + " " + age + " " + salary + " " + pet + getMyCar();
+    }
 }
+
+
+

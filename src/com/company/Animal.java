@@ -71,5 +71,10 @@ public class Animal {
         }
     }
 
+    //Zadanie 6
+    //Zadanie 6
+    public String toString(){
+        return species + " " + name + " " + weight + " " + age + " " + alive + " ";
+    }
 
 }
