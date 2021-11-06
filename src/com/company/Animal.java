@@ -72,7 +72,6 @@ public class Animal implements Saleable{
     }
 
     //Zadanie 6
-    //Zadanie 6
     public String toString(){
         return species + " " + name + " " + weight + " " + age + " " + alive + " ";
     }
@@ -81,7 +80,10 @@ public class Animal implements Saleable{
     public void sale(Human seller, Human buyer, Double price) {
         if (buyer.cash < price) {
             System.out.println("Kupujący ma za mało pieniędzy.");
-        } else if (seller.pet == null) {
+        }
+        else if(this instanceof Human) {
+            System.out.println("Nie można sprzedawać ludzi!");
+        }else if (seller.pet == null) {
             System.out.println("Sprzedający nie ma żadnego zwierzęcia.");
         } else if (!seller.pet.equals(this)) {
             System.out.println("Sprzedający nie ma tego modelu zwierzęcia.");

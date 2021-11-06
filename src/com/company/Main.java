@@ -38,7 +38,7 @@ public class Main {
 
         //Zadanie 2
         me.getMyCar();
-        Car myCar = new Car("Audi","A4",4,2020,60000.00);
+        Car myCar = new Car("Audi", "A4", 4, 2020, 60000.00);
         System.out.println("Mam samochód, " + myCar.producer + " " + myCar.model + " które jest " + myCar.howManyDoors + " drzwiowe i zostało wyprodukowane w " + myCar.yearOfProduction + " roku");
 
         //Zadanie 3 & 4
@@ -50,7 +50,7 @@ public class Main {
         me.setMyCar(myCar);
 
         //Zadanie 6
-        Car myCar2 = new Car("Audi","A4",4,2020,60000.00);
+        Car myCar2 = new Car("Audi", "A4", 4, 2020, 60000.00);
         Car myCar3 = myCar;
         System.out.println(myCar.equals(myCar2));
         System.out.println(myCar.equals(myCar3));
@@ -64,6 +64,12 @@ public class Main {
         me.doYouLike("mięsko");
 
         //Zadanie 7
-      //  Device washingMachine = new Device("Bosch","Speed600",2021);
-        }
+        //  Device washingMachine = new Device("Bosch","Speed600",2021);
+
+        //Zadanie X
+        Human brother = new Human();
+        brother.cash = 3000.0;
+        me.cash = 1000.0;
+        dog.sale(me,brother,2000.0);
     }
+}
