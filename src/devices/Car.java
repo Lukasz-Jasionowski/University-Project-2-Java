@@ -1,18 +1,13 @@
 package devices;
 
 //Zadanie 2
-public class Car {
-    public String producer;
-    public String model;
+public class Car extends Device{//Zadanie 7
     public Integer howManyDoors;
-    public Integer yearOfProduce;
-    public Double value; //Zadanie 5
+  //  public Double value; //Zadanie 5
 
     public Car(String producer, String model, Integer howManyDoors, Integer yearOfProduce, Double value){
-        this.producer = producer;
-        this.model = model;
+        super(producer,model,yearOfProduce);
         this.howManyDoors = howManyDoors;
-        this.yearOfProduce = yearOfProduce;
         this.value = value;
     }
 
@@ -27,7 +22,7 @@ public class Car {
         }
         if (object instanceof Car) {
             Car o = (Car) object;
-            if (producer.equals(o.producer) && model.equals(o.model) && howManyDoors == o.howManyDoors && yearOfProduce == o.yearOfProduce && value.equals(o.value)) {
+            if (producer.equals(o.producer) && model.equals(o.model) && howManyDoors == o.howManyDoors && yearOfProduction == o.yearOfProduction && value.equals(o.value)) {
                 return true;
             } else {
                 return false;
@@ -43,12 +38,12 @@ public class Car {
         result = 31 * result + producer.hashCode();
         result = 31 * result + model.hashCode();
         result = 31 * result + howManyDoors;
-        result = 31 * result + yearOfProduce;
+        result = 31 * result + yearOfProduction;
         result = 31 * result + value.hashCode();
         return result;
 
     }
     public String toString(){
-        return producer + " " + model + " " + howManyDoors + " " + yearOfProduce + " " + value;
+        return producer + " " + model + " " + howManyDoors + " " + yearOfProduction + " " + value;
     }
 }

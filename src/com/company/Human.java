@@ -4,7 +4,7 @@ import devices.Car;
 
 import java.time.LocalDate;
 
-public class Human {
+public class Human extends Animal{
     String firstName;
     String lastName;
     Integer age;
@@ -14,6 +14,7 @@ public class Human {
 
     //Zadanie 3 & 4
     Human() {
+        super("homo sapiens");
         this.salary = 1200.0;
     }
 

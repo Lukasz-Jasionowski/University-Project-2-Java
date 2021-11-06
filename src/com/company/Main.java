@@ -1,6 +1,7 @@
 package com.company;
 
 import devices.Car;
+import devices.Device;
 
 public class Main {
 
@@ -38,7 +39,7 @@ public class Main {
         //Zadanie 2
         me.getMyCar();
         Car myCar = new Car("Audi","A4",4,2020,60000.00);
-        System.out.println("Mam samochód, " + myCar.producer + " " + myCar.model + " które jest " + myCar.howManyDoors + " drzwiowe i zostało wyprodukowane w " + myCar.yearOfProduce + " roku");
+        System.out.println("Mam samochód, " + myCar.producer + " " + myCar.model + " które jest " + myCar.howManyDoors + " drzwiowe i zostało wyprodukowane w " + myCar.yearOfProduction + " roku");
 
         //Zadanie 3 & 4
         me.setSalary(6000.50);
@@ -58,5 +59,11 @@ public class Main {
         System.out.println(myCar3);
         System.out.println(me);
         System.out.println(cat);
+
+        System.out.println(me.species);
+        me.doYouLike("mięsko");
+
+        //Zadanie 7
+        Device washingMachine = new Device("Bosch","Speed600",2021)
         }
     }
