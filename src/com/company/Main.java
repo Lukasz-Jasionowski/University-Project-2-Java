@@ -64,6 +64,6 @@ public class Main {
         me.doYouLike("mięsko");
 
         //Zadanie 7
-        Device washingMachine = new Device("Bosch","Speed600",2021)
+      //  Device washingMachine = new Device("Bosch","Speed600",2021);
         }
     }

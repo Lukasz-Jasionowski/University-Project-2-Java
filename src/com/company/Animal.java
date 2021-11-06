@@ -1,6 +1,6 @@
 package com.company;
 
-public class Animal {
+public class Animal implements Saleable{
     final String species; //Zadanie 1
     String name;
     private Double weight; //Zadanie 1
@@ -77,4 +77,22 @@ public class Animal {
         return species + " " + name + " " + weight + " " + age + " " + alive + " ";
     }
 
+    @Override
+    public void sale(Human seller, Human buyer, Double price) {
+        if (buyer.cash < price) {
+            System.out.println("Kupujący ma za mało pieniędzy.");
+        } else if (seller.pet == null) {
+            System.out.println("Sprzedający nie ma żadnego zwierzęcia.");
+        } else if (!seller.pet.equals(this)) {
+            System.out.println("Sprzedający nie ma tego modelu zwierzęcia.");
+        } else {
+            //wymiana kasy
+            seller.cash += price;
+            buyer.cash -= price;
+            //wymiana zwierzęcia
+            seller.pet = null;
+            buyer.pet = this;
+            System.out.println("Transakcja się udała, kupiono " + this);
+        }
+    }
 }

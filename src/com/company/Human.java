@@ -1,6 +1,7 @@
 package com.company;
 
 import devices.Car;
+import devices.Phone;
 
 import java.time.LocalDate;
 
@@ -9,8 +10,10 @@ public class Human extends Animal{
     String lastName;
     Integer age;
     private Double salary; //Zadanie 3 & 4
-    Animal pet; //Zadanie 1
-    private Car myCar; //Zadanie 5
+    public Animal pet; //Zadanie 1
+    public Car myCar; //Zadanie 5
+    public Double cash;
+    public Phone phone;
 
     //Zadanie 3 & 4
     Human() {
@@ -51,7 +54,7 @@ public class Human extends Animal{
     }
 
     //Zadanie 5
-    Car getMyCar() {
+    public Car getMyCar() {
         return myCar;
     }
 
