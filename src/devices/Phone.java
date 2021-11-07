@@ -8,16 +8,17 @@ import java.awt.*;
 public class Phone extends Device implements Saleable { //Zadanie 7
     Double screenSize;
     String os;
-    Double value;
+    public Double value;
 
-    Phone(String producer, String model, Integer yearOfProduction) {
-        super(producer, model, yearOfProduction);
+    public Phone(String producer, String model, Integer yearOfProduction, double value) {
+        super(producer, model, yearOfProduction, value);
+        this.value = value;
     }
 
     @Override
     public void turnOn() {
-        System.out.println("Klikam włącznik");
-    }
+        System.out.println("Przytrzymuję włącznik");
+    } //Zadanie 7
 
     @Override
     public void sale(Human seller, Human buyer, Double price) {

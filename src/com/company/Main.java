@@ -2,6 +2,7 @@ package com.company;
 
 import devices.Car;
 import devices.Device;
+import devices.Phone;
 
 public class Main {
 
@@ -65,8 +66,13 @@ public class Main {
 
         //Zadanie 7
         //  Device washingMachine = new Device("Bosch","Speed600",2021);
+        Phone myPhone = new Phone("Samsung", "A50", 2019, 1200.0);
+        System.out.println(myPhone);
+        myPhone.turnOn();
+        System.out.println(myCar);
+        myCar.turnOn();
 
-        //Zadanie X
+        //Zadanie 8
         Human brother = new Human();
         brother.cash = 3000.0;
         me.cash = 1000.0;

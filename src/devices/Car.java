@@ -9,7 +9,7 @@ public class Car extends Device implements Saleable {//Zadanie 7
     //  public Double value; //Zadanie 5
 
     public Car(String producer, String model, Integer howManyDoors, Integer yearOfProduce, Double value) {
-        super(producer, model, yearOfProduce);
+        super(producer, model, yearOfProduce, value);
         this.howManyDoors = howManyDoors;
         this.value = value;
     }
@@ -47,14 +47,10 @@ public class Car extends Device implements Saleable {//Zadanie 7
 
     }
 
-    public String toString() {
-        return producer + " " + model + " " + howManyDoors + " " + yearOfProduction + " " + value;
-    }
-
     @Override
     public void turnOn() {
         System.out.println("Przekręcam kluczyk");
-    }
+    } //Zadanie 7
 
     @Override
     public void sale(Human seller, Human buyer, Double price) {
