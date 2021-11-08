@@ -1,6 +1,6 @@
 package com.company;
 
-public class Animal implements Saleable{
+public class Animal implements Saleable {
     final String species; //Zadanie 1
     String name;
     private Double weight; //Zadanie 1
@@ -72,21 +72,23 @@ public class Animal implements Saleable{
     }
 
     //Zadanie 6
-    public String toString(){
+    public String toString() {
         return species + " " + name + " " + weight + " " + age + " " + alive + " ";
     }
 
-    @Override
+    @Override //Zadanie 8
     public void sale(Human seller, Human buyer, Double price) {
-        if (buyer.cash < price) {
+        if (this instanceof Human) {
+            System.out.println("Nie można sprzedawać ludzi!");
+        }else if(species == "homo sapiens"){
+            System.out.println("Handel ludźmi jest nielegalny!!");
+        }else if (buyer.cash < price) {
             System.out.println("Kupujący ma za mało pieniędzy.");
         }
-        else if(this instanceof Human) {
-            System.out.println("Nie można sprzedawać ludzi!");
-        }else if (seller.pet == null) {
+        else if (seller.pet == null) {
             System.out.println("Sprzedający nie ma żadnego zwierzęcia.");
         } else if (!seller.pet.equals(this)) {
-            System.out.println("Sprzedający nie ma tego modelu zwierzęcia.");
+            System.out.println("Sprzedający nie ma tego zwierzęcia.");
         } else {
             //wymiana kasy
             seller.cash += price;

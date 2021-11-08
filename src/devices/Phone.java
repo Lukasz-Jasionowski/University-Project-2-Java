@@ -20,7 +20,7 @@ public class Phone extends Device implements Saleable { //Zadanie 7
         System.out.println("Przytrzymuję włącznik");
     } //Zadanie 7
 
-    @Override
+    @Override //Zadanie 8
     public void sale(Human seller, Human buyer, Double price) {
         if (buyer.cash < price) {
             System.out.println("Kupujący ma za mało pieniędzy.");

@@ -74,8 +74,23 @@ public class Main {
 
         //Zadanie 8
         Human brother = new Human();
-        brother.cash = 3000.0;
+        brother.cash = 10000.0;
         me.cash = 1000.0;
-        dog.sale(me,brother,2000.0);
+
+        dog.sale(me, brother, 2000.0);
+        myCar.sale(me,brother,6000.0);
+        System.out.println("Mój samochód po transakcji to: " + me.myCar);
+        System.out.println("Samochód brata po transakcji to: " + brother.myCar);
+
+        me.phone = myPhone;
+        myPhone.sale(me,brother,10000.0);
+
+        Animal human = new Human();
+        Animal humanHomoSapiens = new Animal("homo sapiens");
+        me.pet = human;
+        me.pet = humanHomoSapiens;
+        human.sale(me,brother,5000.0);
+        humanHomoSapiens.sale(me,brother,5000.0);
+
     }
 }

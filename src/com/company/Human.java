@@ -5,14 +5,14 @@ import devices.Phone;
 
 import java.time.LocalDate;
 
-public class Human extends Animal{
+public class Human extends Animal {
     String firstName;
     String lastName;
     Integer age;
     private Double salary; //Zadanie 3 & 4
     public Animal pet; //Zadanie 1
     public Car myCar; //Zadanie 5
-    public Double cash;
+    public Double cash; //Zadanie 8
     public Phone phone;
 
     //Zadanie 3 & 4
@@ -59,8 +59,12 @@ public class Human extends Animal{
     }
 
     //Zadanie 6
-    public String toString(){
+    public String toString() {
         return firstName + " " + lastName + " " + age + " " + salary + " " + pet + getMyCar();
+    }
+    @Override //Zadanie 8
+    public void sale(Human seller, Human buyer, Double price) {
+        System.out.println("Handel ludźmi jest nielegalny!!");
     }
 }
 
