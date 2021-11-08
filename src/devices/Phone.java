@@ -5,12 +5,12 @@ import com.company.Saleable;
 
 import java.awt.*;
 
-public class Phone extends Device implements Saleable { //Zadanie 7
+public class Phone extends Device implements Saleable { //Zadanie 7 ↓
     Double screenSize;
     String os;
     public Double value;
 
-    public Phone(String producer, String model, Integer yearOfProduction, double value) {
+    public Phone(String producer, String model, Integer yearOfProduction, Double value) {
         super(producer, model, yearOfProduction, value);
         this.value = value;
     }
@@ -20,7 +20,7 @@ public class Phone extends Device implements Saleable { //Zadanie 7
         System.out.println("Przytrzymuję włącznik");
     } //Zadanie 7
 
-    @Override //Zadanie 8
+    @Override //Zadanie 8 ↓
     public void sale(Human seller, Human buyer, Double price) {
         if (buyer.cash < price) {
             System.out.println("Kupujący ma za mało pieniędzy.");

@@ -1,5 +1,6 @@
 package com.company;
 
+import creatures.Animal;
 import devices.Car;
 import devices.Phone;
 
@@ -15,7 +16,7 @@ public class Human extends Animal {
     public Double cash; //Zadanie 8
     public Phone phone;
 
-    //Zadanie 3 & 4
+    //Zadanie 3 & 4 ↓
     Human() {
         super("homo sapiens");
         this.salary = 1200.0;
@@ -32,7 +33,6 @@ public class Human extends Animal {
         }
     }
 
-    //Zadanie 3 & 4
     Double getSalary() {
         LocalDate localdate = LocalDate.now();
         System.out.println(localdate);
@@ -40,7 +40,7 @@ public class Human extends Animal {
         return this.salary;
     }
 
-    //Zadanie 5
+    //Zadanie 5 ↓
     void setMyCar(Car myCar) {
         if (salary > myCar.value) {
             System.out.println("Udało się kupić samochód za gotówkę");
@@ -53,18 +53,28 @@ public class Human extends Animal {
         }
     }
 
-    //Zadanie 5
     public Car getMyCar() {
         return myCar;
     }
 
-    //Zadanie 6
+    //Zadanie 6 ↓
     public String toString() {
         return firstName + " " + lastName + " " + age + " " + salary + " " + pet + getMyCar();
     }
-    @Override //Zadanie 8
+
+    @Override //Zadanie 8 ↓
     public void sale(Human seller, Human buyer, Double price) {
         System.out.println("Handel ludźmi jest nielegalny!!");
+    }
+
+    @Override //Zadanie 9 ↓
+    public void feed() {
+        System.out.println("Człowiek został nakarmiony");
+    }
+
+    @Override
+    public void feed(Double foodWeight) {
+        System.out.println("Człowiek został nakarmiony, a waga jedzenia wyniosła " + foodWeight + "kg");
     }
 }
 

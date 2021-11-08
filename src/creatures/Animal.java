@@ -1,14 +1,17 @@
-package com.company;
+package creatures;
 
-public class Animal implements Saleable {
-    final String species; //Zadanie 1
-    String name;
-    private Double weight; //Zadanie 1
-    Integer age;
-    Boolean alive;
+import com.company.Human;
+import com.company.Saleable;
 
-    //Zadanie 1
-    Animal(String species) {
+public abstract class Animal implements Saleable, Feedable {
+    public final String species; //Zadanie 1
+    public String name;
+    public Double weight; //Zadanie 1
+    public Integer age;
+    public Boolean alive;
+
+    //Zadanie 1 ↓
+    public Animal(String species) {
         this.species = species;
         this.alive = true;
 
@@ -21,8 +24,7 @@ public class Animal implements Saleable {
         }
     }
 
-    //Zadanie 1
-    void feed() {
+    public void feed() {
         if (!alive && weight <= 0) {
             System.out.println("Zwierzę jest martwe. Nie może zostać nakarmione");
         } else {
@@ -32,8 +34,7 @@ public class Animal implements Saleable {
         }
     }
 
-    //Zadanie 1
-    void takeForAWalk() {
+    public void takeForAWalk() {
         if (this.weight <= 0) {
             alive = false;
             System.out.println("Zwierzę jest martwe nie może zostać wyprowadzone na spacer");
@@ -49,11 +50,11 @@ public class Animal implements Saleable {
         }
     }
 
-    void introduceYourself() {
+    public void introduceYourself() {
         System.out.println("Jestem " + this.name);
     }
 
-    void doYouLike(String foodType) {
+    public void doYouLike(String foodType) {
         if (this.species == "Felis" && foodType == "mouse") {
             System.out.println("Tak, lubię " + foodType);
         } else {
@@ -61,7 +62,7 @@ public class Animal implements Saleable {
         }
     }
 
-    Integer getHumanAge() {
+    public Integer getHumanAge() {
         if (this.species == "Canis") {
             return this.age * 7;
         } else if (this.species == "Felis") {
@@ -71,21 +72,20 @@ public class Animal implements Saleable {
         }
     }
 
-    //Zadanie 6
+    //Zadanie 6 ↓
     public String toString() {
-        return species + " " + name + " " + weight + " " + age + " " + alive + " ";
+        return "Species: " + species + " " + ", Name: " + name + " " + ", Weight: " + weight + " " + ", Age: " + age + " " + ", Is alive: " + alive + " ";
     }
 
-    @Override //Zadanie 8
+    @Override //Zadanie 8 ↓
     public void sale(Human seller, Human buyer, Double price) {
         if (this instanceof Human) {
             System.out.println("Nie można sprzedawać ludzi!");
-        }else if(species == "homo sapiens"){
+        } else if (species == "homo sapiens") {
             System.out.println("Handel ludźmi jest nielegalny!!");
-        }else if (buyer.cash < price) {
+        } else if (buyer.cash < price) {
             System.out.println("Kupujący ma za mało pieniędzy.");
-        }
-        else if (seller.pet == null) {
+        } else if (seller.pet == null) {
             System.out.println("Sprzedający nie ma żadnego zwierzęcia.");
         } else if (!seller.pet.equals(this)) {
             System.out.println("Sprzedający nie ma tego zwierzęcia.");

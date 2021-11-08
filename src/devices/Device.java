@@ -1,6 +1,6 @@
 package devices;
 
-//Zadanie 7
+//Zadanie 7 ↓
 public abstract class Device {
     final public String producer;
     final public String model;
@@ -14,10 +14,10 @@ public abstract class Device {
         this.value = value;
     }
 
-    abstract public void turnOn(); //Zadanie 7
+    abstract public void turnOn();
 
     @Override
-    public String toString() { //Zadanie 7
+    public String toString() {
         return "Device{" +
                 "Producer: " + producer +
                 ", Model: " + model +
