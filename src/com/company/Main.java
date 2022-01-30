@@ -3,8 +3,7 @@ package com.company;
 import creatures.Animal;
 import creatures.FarmAnimal;
 import creatures.Pet;
-import devices.Car;
-import devices.Phone;
+import devices.*;
 
 public class Main {
 
@@ -41,7 +40,11 @@ public class Main {
     */
         //Zadanie 2 ↓
         me.getMyCar();
-        Car myCar = new Car("Audi", "A4", 4, 2020, 60000.00);
+        Car myCar = new Car("Audi", "A4", 4, 2020, 60000.00) {
+            @Override
+            public void refuel() {
+            }
+        };
         System.out.println("Mam samochód, " + myCar.producer + " " + myCar.model + " które jest " + myCar.howManyDoors + " drzwiowe i zostało wyprodukowane w " + myCar.yearOfProduction + " roku");
 
         //Zadanie 3 & 4 ↓
@@ -53,7 +56,11 @@ public class Main {
         me.setMyCar(myCar);
 
         //Zadanie 6 ↓
-        Car myCar2 = new Car("Audi", "A4", 4, 2020, 60000.00);
+        Car myCar2 = new Car("Audi", "A4", 4, 2020, 60000.00) {
+            @Override
+            public void refuel() {
+            }
+        };
         Car myCar3 = myCar;
         System.out.println(myCar.equals(myCar2));
         System.out.println(myCar.equals(myCar3));
@@ -103,5 +110,14 @@ public class Main {
         cow.feed(0.1);
         cow.feed();
         cow.beEaten();
+        myPhone.instalAnApp("GhostBuster");
+        myPhone.instalAnApp("GhostBuster", "1.0");
+        myPhone.instalAnApp("GhostBuster", "1.0", "Darkweb");
+        Electric eCar = new Electric("Audi", "A3", 4, 2010, 60000.00);
+        Disel dCar = new Disel("Audi", "A4", 2, 2020, 60000.00);
+        LPG lpgCar = new LPG("Audi", "A5", 4, 2022, 60000.00);
+        eCar.refuel();
+        dCar.refuel();
+        lpgCar.refuel();
     }
 }

@@ -4,9 +4,10 @@ import com.company.Human;
 import com.company.Saleable;
 
 //Zadanie 2
-public class Car extends Device implements Saleable {//Zadanie 7
+public abstract class Car extends Device implements Saleable {//Zadanie 7
     public Integer howManyDoors;
     //  public Double value; //Zadanie 5
+
 
     public Car(String producer, String model, Integer howManyDoors, Integer yearOfProduce, Double value) {
         super(producer, model, yearOfProduce, value);
@@ -70,4 +71,5 @@ public class Car extends Device implements Saleable {//Zadanie 7
             System.out.println("Transakcja się udała, kupiono " + this);
         }
     }
+    abstract public void refuel();
 }
