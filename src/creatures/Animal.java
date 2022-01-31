@@ -2,6 +2,7 @@ package creatures;
 
 import com.company.Human;
 import com.company.Saleable;
+import devices.Car;
 
 public abstract class Animal implements Saleable, Feedable {
     public final String species; //Zadanie 1

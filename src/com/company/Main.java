@@ -28,7 +28,7 @@ public class Main {
         // me.pet = dog;
 
         //Zadanie 1 ↓
-    /*    cat.feed();
+    /*  cat.feed();
         cat.takeForAWalk();
         cat.takeForAWalk();
         cat.takeForAWalk();
@@ -39,7 +39,7 @@ public class Main {
         cat.takeForAWalk();
     */
         //Zadanie 2 ↓
-        me.getMyCar();
+        me.getMyCar(0);
         Car myCar = new Car("Audi", "A4", 4, 2020, 60000.00) {
             @Override
             public void refuel() {
@@ -53,7 +53,7 @@ public class Main {
 
         //Zadanie 5 ↓
         me.setSalary(60000.50);
-        me.setMyCar(myCar);
+        me.setMyCar(myCar, 0);
 
         //Zadanie 6 ↓
         Car myCar2 = new Car("Audi", "A4", 4, 2020, 60000.00) {
@@ -85,11 +85,10 @@ public class Main {
         Human brother = new Human();
         brother.cash = 10000.0;
         me.cash = 1000.0;
+        me.hasCar(myCar);
 
         //   dog.sale(me, brother, 2000.0);
         myCar.sale(me, brother, 6000.0);
-        System.out.println("Mój samochód po transakcji to: " + me.myCar);
-        System.out.println("Samochód brata po transakcji to: " + brother.myCar);
 
         me.phone = myPhone;
         myPhone.sale(me, brother, 10000.0);
@@ -113,11 +112,17 @@ public class Main {
         myPhone.instalAnApp("GhostBuster");
         myPhone.instalAnApp("GhostBuster", "1.0");
         myPhone.instalAnApp("GhostBuster", "1.0", "Darkweb");
-        Electric eCar = new Electric("Audi", "A3", 4, 2010, 60000.00);
-        Disel dCar = new Disel("Audi", "A4", 2, 2020, 60000.00);
-        LPG lpgCar = new LPG("Audi", "A5", 4, 2022, 60000.00);
+        Electric eCar = new Electric("Audi", "A3", 4, 2010, 40000.00);
+        Disel dCar = new Disel("Audi", "A4", 2, 2020, 50000.00);
+        LPG lpgCar = new LPG("Audi", "A5", 4, 2022, 80000.00);
         eCar.refuel();
         dCar.refuel();
         lpgCar.refuel();
+        me.addCar(eCar);
+        me.addCar(dCar);
+        me.addCar(lpgCar);
+        me.addCar(myCar);
+        me.addCar(myCar3);
+        System.out.println(me.totalValueOfCars());
     }
 }
