@@ -3,6 +3,9 @@ package devices;
 import com.company.Human;
 import com.company.Saleable;
 
+import java.util.AbstractList;
+import java.util.ArrayList;
+
 //Zadanie 2
 public abstract class Car extends Device implements Saleable {//Zadanie 7
     public Integer howManyDoors;
@@ -59,6 +62,8 @@ public abstract class Car extends Device implements Saleable {//Zadanie 7
             System.out.println("Kupujący ma za mało pieniędzy.");
         } else if (!seller.hasCar(this)) {
             System.out.println("Sprzedający nie ma żadnego samochodu.");
+        } else if (carOwners.get(carOwners.size() - 1) != seller.firstName) {
+            System.out.println("Sprzedający nie jest ostatnim właśicielem");
         } else if (!buyer.hasFreeParkingLot()) {
             System.out.println("Kupujący nie mia miejsca");
         } else {
@@ -69,7 +74,33 @@ public abstract class Car extends Device implements Saleable {//Zadanie 7
             seller.removeCar(this);
             buyer.addCar(this);
             System.out.println("Transakcja się udała, kupiono " + this);
+            carOwners.add(buyer.name);
         }
     }
+
     abstract public void refuel();
+
+    public ArrayList<String> carOwners = new ArrayList<String>();
+
+    public void wasAnOwner() {
+        if (carOwners.size() == 0) {
+            System.out.println("Nie było jeszcze pierwszego właściciela pojazdu");
+        } else {
+            System.out.println("Właścicielami pojazdu byli: " + carOwners);
+        }
+    }
+
+    public void isHeSoldHim(Human seller, Human buyer) {
+        for (int i = 0; i < carOwners.size(); i++) {
+            if (carOwners.get(i) == seller.firstName && carOwners.get(++i) == buyer.firstName) {
+                System.out.println("Tak! " + seller.firstName + " sprzedał samochód " + buyer.firstName);
+            } else {
+                System.out.println("Nie! " + seller.firstName + " nie sprzedał samochodu " + buyer.firstName);
+            }
+        }
+    }
+
+    public void howManyTimesSold() {
+        System.out.println("Sprzedano: " + carOwners.size() + " razy");
+    }
 }

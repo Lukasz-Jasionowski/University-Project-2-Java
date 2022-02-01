@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Human extends Animal {
     private static final int DEFAULT_GAREGE_SIZE = 4;
-    String firstName;
+    public String firstName;
     String lastName;
     Integer age;
     private Double salary; //Zadanie 3 & 4
@@ -94,13 +94,13 @@ public class Human extends Animal {
     }
 
     public boolean hasCar(Car car) {
-        try{
+        try {
             for (int i = 0; i < this.garage.length; i++) {
                 if (this.garage[i] == car) {
                     return true;
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
@@ -113,38 +113,39 @@ public class Human extends Animal {
                     return true;
                 }
             }
-        }catch(Exception e){
-                    e.printStackTrace();
-                }return false;
-            }
-
-        public void removeCar (Car car){
-            for (int i = 0; i < this.garage.length; i++) {
-                if (this.garage[i] == car) {
-                    this.garage[i] = null;
-                    break;
-                }
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return false;
+    }
 
-        public void addCar (Car car){
-            for (int i = 0; i < this.garage.length; i++) {
-                if (this.garage[i] == null) {
-                    this.garage[i] = car;
-                    break;
-                }
+    public void removeCar(Car car) {
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] == car) {
+                this.garage[i] = null;
+                break;
             }
-        }
-
-        public double totalValueOfCars () {
-            double value = 0;
-            for (int i = 0; i < this.garage.length; i++) {
-                value += getMyCar(i).value;
-            }
-            return value;
-        }
-
-        public void carSort () {
-            //KOD
         }
     }
+
+    public void addCar(Car car) {
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] == null) {
+                this.garage[i] = car;
+                break;
+            }
+        }
+    }
+
+    public double totalValueOfCars() {
+        double value = 0;
+        for (int i = 0; i < this.garage.length; i++) {
+            value += getMyCar(i).value;
+        }
+        return value;
+    }
+
+    public void carSort() {
+        //KOD
+    }
+}

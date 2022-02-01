@@ -5,6 +5,8 @@ import creatures.FarmAnimal;
 import creatures.Pet;
 import devices.*;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -83,12 +85,14 @@ public class Main {
 
         //Zadanie 8 ↓
         Human brother = new Human();
+        brother.firstName = "Mati";
+        brother.name = "Mati";
         brother.cash = 10000.0;
         me.cash = 1000.0;
         me.hasCar(myCar);
 
         //   dog.sale(me, brother, 2000.0);
-        myCar.sale(me, brother, 6000.0);
+        //   myCar.sale(me, brother, 6000.0);
 
         me.phone = myPhone;
         myPhone.sale(me, brother, 10000.0);
@@ -124,5 +128,22 @@ public class Main {
         me.addCar(myCar);
         me.addCar(myCar3);
         System.out.println(me.totalValueOfCars());
+        me.removeCar(myCar3);
+
+        Car lambo = new Car("Lamborghini", "Szybki", 2, 2022, 3000000.00) {
+            @Override
+            public void refuel() {
+                System.out.println("Zalej najdroższe paliwo");
+            }
+        };
+        brother.cash = 60000.0;
+        me.addCar(lambo);
+        lambo.carOwners.add("Łukasz");
+        lambo.sale(me, brother, 50000.00);
+        System.out.println("Lista właścicieli: " + lambo.carOwners);
+        System.out.println(lambo.carOwners.size());
+        lambo.wasAnOwner();
+        lambo.isHeSoldHim(me, brother);
+        lambo.howManyTimesSold();
     }
 }
