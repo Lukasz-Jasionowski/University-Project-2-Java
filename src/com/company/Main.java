@@ -145,5 +145,19 @@ public class Main {
         lambo.wasAnOwner();
         lambo.isHeSoldHim(me, brother);
         lambo.howManyTimesSold();
+        Application puzzleGarden = new Application("Puzzle Garden", 1.0, 0.0);
+        Application heroes = new Application("Heroes III", 3.0, 30.0);
+        Application vip = new Application("Bogol 6000", 1.0,300000.0);
+        myPhone.isInstalled(puzzleGarden);
+        myPhone.installNewApp(puzzleGarden,me);
+        myPhone.installNewApp(heroes,me);
+        myPhone.isInstalled(heroes);
+        myPhone.isInstalled("Heroes III");
+        myPhone.installNewApp(vip,me);
+        myPhone.allFreeApps();
+        myPhone.howManyAppsIsInstalled();
+        myPhone.sortNameApps();
+        myPhone.sortViaPrice();
+        System.out.println(myPhone.appsCollection);
     }
 }

@@ -1,9 +1,10 @@
 package devices;
 
+import com.company.Application;
 import com.company.Human;
 import com.company.Saleable;
 
-import java.util.List;
+import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -54,9 +55,9 @@ public class Phone extends Device implements Saleable {
     }
 
     public void instalAnApp(String appName, String version, String server) {
-        try{
+        try {
             URL url = new URL("https", server, 443, appName + "-" + version);
-        }catch (MalformedURLException e){
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
     }
@@ -71,9 +72,58 @@ public class Phone extends Device implements Saleable {
         System.out.println("Trwa instalacja aplikacji");
         System.out.println("Aplikacja zainstalowana");
     }
+
     public void instalAnApp(List<String> appNames) {
         for (String appName : appNames) {
             this.instalAnApp(appName);
         }
+    }
+
+    public HashSet<Application> appsCollection = new HashSet<Application>();
+
+    void addApp(Phone phone, Application app) {
+        phone.appsCollection.add(app);
+    }
+
+    public void installNewApp(Application app, Human whoWantsToInstall) {
+        if (app.price == 0.0) {
+            System.out.println("Aplikacja jest darmowa!");
+            addApp(this, app);
+            System.out.println("Kupiono " + app.name);
+        } else if (whoWantsToInstall.cash > app.price) {
+            System.out.println("Kupiono! " + app.name + "\nWłaściciel miał wystarczająco pieniędzy aby kupić!");
+            addApp(this, app);
+            whoWantsToInstall.cash -= app.price;
+        } else {
+            System.out.println("Właściciel telefonu nie ma wystarczająco pieniędzy.\nZakup nieudany!");
+        }
+    }
+
+    public void isInstalled(Application app) {
+        if (this.appsCollection.contains(app)) {
+            System.out.println("Aplikacja jest już zainstalowana!");
+        } else {
+            System.out.println("Aplikację można zainstalować.");
+        }
+    }
+
+    public void isInstalled(String nameOfApp) {
+        //KOD
+    }
+
+    public void allFreeApps() {
+        //KOD
+    }
+
+    public void howManyAppsIsInstalled() {
+        System.out.println("Zainstalowanych aplikacji: " + this.appsCollection.size());
+    }
+
+    public void sortNameApps() {
+        //KOD
+    }
+
+    public void sortViaPrice() {
+        //KOD
     }
 }
